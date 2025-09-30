@@ -2,13 +2,17 @@ package com.example.java_spring_boot_backend_2.models;
 
 import com.example.java_spring_boot_backend_2.dto.FiddleDto;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "fiddle")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Fiddle {
 
     public Fiddle(FiddleDto fiddleDto){

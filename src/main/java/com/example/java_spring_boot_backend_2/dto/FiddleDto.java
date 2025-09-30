@@ -1,11 +1,15 @@
 package com.example.java_spring_boot_backend_2.dto;
 
 import com.example.java_spring_boot_backend_2.models.Fiddle;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class FiddleDto {
     public FiddleDto(Fiddle fiddleModel){
         this.setId(fiddleModel.getId());

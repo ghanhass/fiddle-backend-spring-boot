@@ -4,6 +4,7 @@ import com.example.java_spring_boot_backend_2.dto.FiddleDto;
 import com.example.java_spring_boot_backend_2.dto.ResponseDto;
 import com.example.java_spring_boot_backend_2.dto.ResponseMessage;
 import com.example.java_spring_boot_backend_2.services.FiddleService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,15 +14,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@CrossOrigin("http://localhost:4200")
-@RequestMapping(name = "fiddle")
+@RequestMapping("/fiddle")
 public class FiddleController {
     /********************/
     @Autowired
     FiddleService fiddleService;
 
-    @GetMapping()
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<ResponseDto> getFiddleList(){
         ResponseDto response;
         try {
@@ -36,7 +37,7 @@ public class FiddleController {
 
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<ResponseDto> getFiddle(@PathVariable Long id){
         ResponseDto response;
         try {
@@ -51,8 +52,9 @@ public class FiddleController {
 
     }
 
-    @PostMapping()
+    @PostMapping
     public ResponseEntity<ResponseDto> saveFiddle(@RequestBody FiddleDto fiddle){
+        
         ResponseDto responseDto;
         try{
             FiddleDto newFiddle = this.fiddleService.saveFiddle(fiddle);
