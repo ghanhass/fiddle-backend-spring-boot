@@ -1,6 +1,7 @@
-package com.example.java_spring_boot_backend_2.dto;
+package com.example.java_spring_boot_backend.dto;
 
-import com.example.java_spring_boot_backend_2.models.Fiddle;
+
+import com.example.java_spring_boot_backend.models.FiddleData;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FiddleDto {
-    public FiddleDto(Fiddle fiddleModel){
+    public FiddleDto(FiddleData fiddleModel){
         this.setId(fiddleModel.getId());
 
         this.setHtml(fiddleModel.getHtml());

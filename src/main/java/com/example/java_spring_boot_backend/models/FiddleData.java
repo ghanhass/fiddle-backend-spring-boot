@@ -1,6 +1,6 @@
-package com.example.java_spring_boot_backend_2.models;
+package com.example.java_spring_boot_backend.models;
 
-import com.example.java_spring_boot_backend_2.dto.FiddleDto;
+import com.example.java_spring_boot_backend.dto.FiddleDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "fiddle")
+@Table(name = "fiddle_data")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Fiddle {
+public class FiddleData {
 
-    public Fiddle(FiddleDto fiddleDto){
+    public FiddleData(FiddleDto fiddleDto){
         this.setJs(fiddleDto.getJs());
         this.setHtml(fiddleDto.getHtml());
         this.setCss(fiddleDto.getCss());
@@ -44,9 +44,16 @@ public class Fiddle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(columnDefinition = "TEXT")
     private String js;
+
+    @Column(columnDefinition = "TEXT")
     private String html;
+
+    @Column(columnDefinition = "TEXT")
     private String css;
+
+    @Column(columnDefinition = "TEXT")
     private String pastebintext;
 
     private String title;

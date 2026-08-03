@@ -1,9 +1,9 @@
-package com.example.java_spring_boot_backend_2.services.impl;
+package com.example.java_spring_boot_backend.services.impl;
 
-import com.example.java_spring_boot_backend_2.dto.FiddleDto;
-import com.example.java_spring_boot_backend_2.models.Fiddle;
-import com.example.java_spring_boot_backend_2.repositories.FiddleRepository;
-import com.example.java_spring_boot_backend_2.services.FiddleService;
+import com.example.java_spring_boot_backend.dto.FiddleDto;
+import com.example.java_spring_boot_backend.models.FiddleData;
+import com.example.java_spring_boot_backend.repositories.FiddleRepository;
+import com.example.java_spring_boot_backend.services.FiddleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,12 +26,12 @@ public class FiddleServiceImpl implements FiddleService {
 
     @Override
     public FiddleDto saveFiddle(FiddleDto fiddleObj) {
-        Fiddle fiddleModel = new Fiddle(fiddleObj);
+        FiddleData fiddleModel = new FiddleData(fiddleObj);
         return new FiddleDto(this.fiddleRepository.save(fiddleModel));
     }
 
     public List<FiddleDto> getFiddleList(){
-        List<Fiddle> fiddleList = fiddleRepository.findAll();
+        List<FiddleData> fiddleList = fiddleRepository.findAll();
         List<FiddleDto> fiddleDtoList = new ArrayList<>();
 
         fiddleList.forEach(fiddle -> {

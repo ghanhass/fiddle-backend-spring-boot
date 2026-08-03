@@ -1,4 +1,4 @@
-package com.example.java_spring_boot_backend_2.dto;
+package com.example.java_spring_boot_backend.dto;
 
 public class ResponseDto {
     public ResponseDto(Object result, String message, Integer total){

@@ -1,6 +1,6 @@
-package com.example.java_spring_boot_backend_2.services;
+package com.example.java_spring_boot_backend.services;
 
-import com.example.java_spring_boot_backend_2.dto.FiddleDto;
+import com.example.java_spring_boot_backend.dto.FiddleDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

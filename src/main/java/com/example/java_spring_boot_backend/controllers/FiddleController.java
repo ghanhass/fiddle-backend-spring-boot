@@ -1,9 +1,8 @@
-package com.example.java_spring_boot_backend_2.controllers;
+package com.example.java_spring_boot_backend.controllers;
 
-import com.example.java_spring_boot_backend_2.dto.FiddleDto;
-import com.example.java_spring_boot_backend_2.dto.ResponseDto;
-import com.example.java_spring_boot_backend_2.dto.ResponseMessage;
-import com.example.java_spring_boot_backend_2.services.FiddleService;
+import com.example.java_spring_boot_backend.dto.FiddleDto;
+import com.example.java_spring_boot_backend.dto.ResponseDto;
+import com.example.java_spring_boot_backend.services.FiddleService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 //@CrossOrigin(origins = "http://localhost:4200")
@@ -27,7 +28,7 @@ public class FiddleController {
         ResponseDto response;
         try {
             List<FiddleDto> fiddles = fiddleService.getFiddleList();
-            response = new ResponseDto(fiddles, "success", null);
+            response = new ResponseDto(fiddles, "ok", null);
             return ResponseEntity.status(HttpStatus.OK).body(response);
         }
         catch (Exception e){
@@ -42,7 +43,9 @@ public class FiddleController {
         ResponseDto response;
         try {
             FiddleDto fiddle = fiddleService.getFiddle(id);
-            response = new ResponseDto(fiddle, "success", null);
+            ArrayList<FiddleDto> result = new ArrayList<>();
+            result.add(fiddle);
+            response = new ResponseDto(result, "ok", null);
             return ResponseEntity.status(HttpStatus.OK).body(response);
         }
         catch (Exception e){
@@ -58,7 +61,9 @@ public class FiddleController {
         ResponseDto responseDto;
         try{
             FiddleDto newFiddle = this.fiddleService.saveFiddle(fiddle);
-            responseDto = new ResponseDto(newFiddle, "success", null);
+            ArrayList<FiddleDto> result = new ArrayList<>();
+            result.add(newFiddle);
+            responseDto = new ResponseDto(result, "ok", null);
             return ResponseEntity.status(HttpStatus.OK).body(responseDto);
         }
         catch(Exception e){

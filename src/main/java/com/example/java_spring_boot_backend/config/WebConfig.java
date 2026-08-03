@@ -1,4 +1,4 @@
-package com.example.java_spring_boot_backend_2.config;
+package com.example.java_spring_boot_backend.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
