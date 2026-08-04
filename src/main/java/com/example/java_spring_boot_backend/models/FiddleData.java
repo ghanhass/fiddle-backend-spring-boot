@@ -28,7 +28,7 @@ public class FiddleData {
         this.setCssPartSize(fiddleDto.getCssPartSize());
         this.setJsPartSize(fiddleDto.getJsPartSize());
 
-        this.setCodePartSize(fiddleDto.getCodePartSize());
+        this.setCodesPartSize(fiddleDto.getCodesPartSize());
         this.setMainContainerSize(fiddleDto.getMainContainerSize());
         this.setMainContainerHeight(fiddleDto.getMainContainerHeight());
         this.setMainContainerWidth(fiddleDto.getMainContainerWidth());
@@ -63,7 +63,7 @@ public class FiddleData {
     private Integer cssPartSize;
     private Integer jsPartSize;
 
-    private Integer codePartSize;
+    private Integer codesPartSize;
     private Integer mainContainerSize;
     private Integer mainContainerHeight;
     private Integer mainContainerWidth;

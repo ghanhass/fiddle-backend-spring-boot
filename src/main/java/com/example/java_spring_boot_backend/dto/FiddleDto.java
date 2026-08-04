@@ -27,7 +27,7 @@ public class FiddleDto {
         this.setJsPartSize(fiddleModel.getJsPartSize());
         this.setCssPartSize(fiddleModel.getCssPartSize());
 
-        this.setCodePartSize(fiddleModel.getCodePartSize());
+        this.setCodesPartSize(fiddleModel.getCodesPartSize());
         this.setMainContainerSize(fiddleModel.getMainContainerSize());
         this.setMainContainerHeight(fiddleModel.getMainContainerHeight());
         this.setMainContainerWidth(fiddleModel.getMainContainerWidth());
@@ -55,7 +55,7 @@ public class FiddleDto {
     private Integer cssPartSize;
     private Integer jsPartSize;
 
-    private Integer codePartSize;
+    private Integer codesPartSize;
     private Integer mainContainerSize;
     private Integer mainContainerHeight;
     private Integer mainContainerWidth;
